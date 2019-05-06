@@ -140,7 +140,6 @@ To take advantage of this, the first step is to provision an Azure Storage accou
 Once the account is created, this code can be changed, and a change will need to be made to the .bot file.
 
 ```json
-// this is my .bot file, 
 {
   "name": "EchoBot",
   "services": [
@@ -215,7 +214,6 @@ Now that storage is hooked up, the application can be deployed to Azure.  It is 
 The channels registration now expects that app Id and app password to be used by the bot.  Therefore the .bot file needs to be edited and then republished with the correct values (See below).
 
 ```json
-// this is my .bot file, 
 {
   "name": "EchoBot",
   "services": [
