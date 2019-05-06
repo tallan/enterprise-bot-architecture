@@ -245,4 +245,6 @@ The channels registration now expects that app Id and app password to be used by
 
 Once the republish is complete, the connection can be validated in the channels registration within the Azure Portal.  The channels registration has a tab named "Test in Web Chat" which allows you to communicate with the bot.
 
+![testinwebchat](https://imagesforgithub.blob.core.windows.net/images/testinwebchat.png)
+
 The bot is now publicly available. Underneath the tab channels there are instructions for connecting different platforms to the bot, such as Facebook, Skype, Email, etc, all of which have unique configurations binding the channel to the channels registration, thus creating a secure line of communication.
