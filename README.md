@@ -248,3 +248,12 @@ Once the republish is complete, the connection can be validated in the channels 
 ![testinwebchat](https://imagesforgithub.blob.core.windows.net/images/testinwebchat.png)
 
 The bot is now publicly available. Underneath the tab channels there are instructions for connecting different platforms to the bot, such as Facebook, Skype, Email, etc, all of which have unique configurations binding the channel to the channels registration, thus creating a secure line of communication.
+
+------
+
+# Taking a Look at the Big Picture
+
+Now that the bare minimum is understood, the real work can begin.  Microsoft released this image of their proposed architecture, and it will be followed as a guide with real work and examples of how to best go about it.
+
+![bot architecture diagram](https://imagesforgithub.blob.core.windows.net/images/conversational-bot.png)
+
