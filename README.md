@@ -48,8 +48,7 @@ public async Task OnTurnAsync(ITurnContext turnContext,
         await _accessors.ConversationState.SaveChangesAsync(turnContext);
 
         // Echo back to the user whatever they typed.
-        var responseMessage = $"Turn {state.TurnCount}: You sent 
-            '{turnContext.Activity.Text}'\n";
+        var responseMessage = $"Turn {state.TurnCount}: You sent '{turnContext.Activity.Text}'\n";
             await turnContext.SendActivityAsync(responseMessage);
     }
     else
@@ -66,7 +65,7 @@ In the sample above, the bot simply has a counter, which is incremented whenever
 
 ![Preview](https://imagesforgithub.blob.core.windows.net/images/basicConvo.png)
 
-Something noteworthy to mention in the photo above.  The first thing that happened when I opened the chat was a "conversationUpdate" event, then I said "hello," and then there was another.  These two events are actually myself and the bot joining the conversation, which will always be the case.  This is also an easy indicator of there being something wrong in the codebase with the bot, since this activity should happen before any message exchange occurs. (It is worth mentioning that production worthy bots will very likely not have these messages, they are just great for during dev)
+Something noteworthy to mention in the photo above.  The first thing that happened when I opened the chat was a "conversationUpdate" event, then I said "hi," and then there was another.  These two events are actually myself and the bot joining the conversation, which will always be the case.  This is also an easy indicator of there being something wrong in the codebase with the bot, since this activity should happen before any message exchange occurs. (It is worth mentioning that production worthy bots will very likely not have these messages, they are just great for during dev)
 
 ------
 
@@ -153,15 +152,18 @@ Once the account is created, this code can be changed, and a change will need to
       "appPassword": "",
       "id": "1"
     },
-    // this is the new section needed to identify the blob storage
-    // -----------------------------------------------------------------
+    {
+      "COMMENT": "The following section is needed to identify the blob storage"
+    },
     {
       "type": "blob",
       "name": "SOME NAME - NEEDS TO MATCH THE CODE IN STARTUP BELOW",
       "connectionString": "YOUR CONNECTION STRING - GET FROM KEYS IN THE AZURE PORTAL",
       "container": "THE TARGET CONTAINER NAME"
+    },
+    {
+      "COMMENT": "----------END OF NEW SECTION----------"
     }
-    // -------------------------------------------------------------------
   ],
   "padlock": "",
   "version": "2.0"
@@ -221,19 +223,22 @@ The channels registration now expects that app Id and app password to be used by
       "type": "endpoint",
       "name": "development",
       "endpoint": "http://localhost:3978/api/messages",
-      "appId": "THE APP ID",               <---------------
-      "appPassword": "THE APP PASSWORD",   <---------------
+      "appId": "REQUIRED --------> THE APP ID",
+      "appPassword": "REQUIRED --> THE APP PASSWORD",
       "id": "1"
     },
-    // this is the new section needed to identify the blob storage
-    // -----------------------------------------------------------------
+    {
+      "COMMENT": "The following section is needed to identify the blob storage"
+    },
     {
       "type": "blob",
       "name": "SOME NAME - NEEDS TO MATCH THE CODE IN STARTUP BELOW",
       "connectionString": "YOUR CONNECTION STRING - GET FROM KEYS IN THE AZURE PORTAL",
       "container": "THE TARGET CONTAINER NAME"
+    },
+    {
+      "COMMENT": "----------END OF NEW SECTION----------"
     }
-    // -------------------------------------------------------------------
   ],
   "padlock": "",
   "version": "2.0"
